@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Application</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body{
+            background: #f7f9fd;
+        }
+        ul{
+            margin-top: 30px;
+            list-style: none;
+            & li{
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        input,button{
+            border: 0;
+            outline: 0;
+            background: none;
+        }
+        .container-wrapper{
+            width: 50%;
+            margin: 100px auto 0;
+        }
+        .section{
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+        }
+        .inner-content{
+            width: 50%;
+            padding:10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 4px 4px lightgray;
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
+            background: #fff;
+            gap: 20px;
+            & h2{
+                color: #000;
+                font-size: 1.2rem;
+            }
+            & input{
+                padding: 8px;
+                border-radius: 5px;
+                border: 1px solid #e3e3e3;
+            }
+            & button{
+                padding: 10px;
+                border-radius: 8px;
+                color: #fff;
+                background: #587ef4;
+            }
+        }
+        .bg{
+            color: #fff;
+            margin-top: 40px;
+            padding: 20px;
+            border-radius: 8px;
+            background: #587ef4 ;
+        }
+        .counter{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            & span{
+                font-size: 1.2rem;
+            }
+        }
+        .ExpenseLIst{
+            margin-top: 20px;
+            color: #000;
+            padding: 20px;
+            background: #fff;
+        }
+        .edit{
+            display: flex;
+            gap: 10px;
+            color: #587ef4;
+            & img{
+                cursor: pointer;
+                width: 25px;
+                height: 25px;
+            }
+        }
+        .List-Container{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            & li{
+                border: 1px solid #000;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-wrapper">
+        <div class="section">
+            <div class="budget inner-content">
+                <h2>Budget</h2>
+                <input type="text" placeholder="Enter Your Amount" id="totalBudget">
+                <button id="setBudget"> Set Budget</button>
+            </div>
+            <div class="expenses inner-content">
+                <h2>Expense</h2>
+                <input type="text" placeholder="Expense" id="exp">
+                <input type="text" placeholder="Expense Amount" id="amount">
+                <button id="checkEXP">Check Amount</button>
+            </div>
+        </div>
+        <div class="section bg">
+            <div class="counter">
+                <h3>Total Buget</h3>
+                <span id="Budget"></span>
+            </div>
+            <div class="counter">
+                <h3>Expense</h3>
+                <span id="totalExpense"></span>
+            </div>
+            <div class="counter">
+                <h3>Balance</h3>
+                <span id="totalblance"></span>
+            </div>
+        </div>
+        <div class="ExpenseLIst">
+            <h2>Expense List</h2>
+            <ul class="List-Container">
+                <!-- <li>
+                    <span class="expenseName"></span>
+                    <span class="expenseAmount"></span>
+                    <div class="edit">
+                    </div>
+                </li> -->
+            </ul>
+
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
