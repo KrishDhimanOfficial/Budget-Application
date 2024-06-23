@@ -8,7 +8,6 @@ let TotalEXP = document.querySelector('#totalExpense');
 
 let TBudget = 0;
 let prevExpense = 0;
-
 SetBudget.addEventListener('click', () => {
     const TotalBudget = document.querySelector('#totalBudget');
     if (parseInt(TotalBudget.value)) {
@@ -31,11 +30,10 @@ if (!CheckExpName.value && !CheckExpAmount.value){
 
         else if (CheckExpName.value && CheckExpAmount.value) {
             prevExpense += expense;
-            console.clear()
-            console.log('prevExpense: ' + prevExpense)
             TotalEXP.innerHTML = prevExpense;
             BalanceAmount.innerHTML = TBudget - prevExpense;
             component(CheckExpName, CheckExpAmount);
+            saveData()
         }
     });
 } 
