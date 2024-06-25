@@ -8,6 +8,8 @@ let TotalEXP = document.querySelector('#totalExpense');
 
 let TBudget = 0;
 let prevExpense = 0;
+let ExpenseStatus = false;
+
 SetBudget.addEventListener('click', () => {
     const TotalBudget = document.querySelector('#totalBudget');
     if (parseInt(TotalBudget.value)) {
@@ -19,7 +21,6 @@ SetBudget.addEventListener('click', () => {
 let CheckExpName = document.querySelector('#exp');
 let CheckExpAmount = document.querySelector('#amount');
 
-if (!CheckExpName.value && !CheckExpAmount.value){
 
     CheckEXP.addEventListener('click', () => {
 
@@ -27,17 +28,20 @@ if (!CheckExpName.value && !CheckExpAmount.value){
         if (expense > (TBudget - prevExpense)) {
             alert('Please Enter Correct Value');
         }
-
-        else if (CheckExpName.value && CheckExpAmount.value) {
-            prevExpense += expense;
-            TotalEXP.innerHTML = prevExpense;
-            BalanceAmount.innerHTML = TBudget - prevExpense;
-            component(CheckExpName, CheckExpAmount);
-            saveData()
+        else{
+            if(CheckExpAmount.value == ' ' && CheckExpName.value == ' '){
+                alert("Enter Value");
+            }
+            else{
+                prevExpense += expense;
+                TotalEXP.innerHTML = parseInt( prevExpense);
+                BalanceAmount.innerHTML = TBudget - prevExpense;
+                component(CheckExpName, CheckExpAmount);
+                CheckExpAmount.value = ' ';
+                CheckExpName.value = ' ';
+            }
         }
     });
-} 
-
 
 function component(CheckExpName, CheckExpAmount) {
     const listElem = document.createElement('li');
