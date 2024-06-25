@@ -111,7 +111,7 @@ function editItem(listItem){
 
     prevExpense -= parseInt(listAmount.innerText);
     TotalEXP.innerHTML = Math.abs(prevExpense);
-    BalanceAmount.innerHTML = parseInt(currentBalance) + parseInt(listAmount.innerText);
+     BalanceAmount.innerHTML = parseInt(currentBalance) + parseInt(listAmount.innerText);
 
     CheckExpName.value = listName.innerText;
     CheckExpAmount.value = listAmount.innerText;
