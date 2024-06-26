@@ -22,26 +22,26 @@ let CheckExpName = document.querySelector('#exp');
 let CheckExpAmount = document.querySelector('#amount');
 
 
-    CheckEXP.addEventListener('click', () => {
+CheckEXP.addEventListener('click', () => {
 
-        let expense = parseInt(CheckExpAmount.value);
-        if (expense > (TBudget - prevExpense)) {
-            alert('Please Enter Correct Value');
+    let expense = parseInt(CheckExpAmount.value);
+    if (expense > (TBudget - prevExpense)) {
+        alert('Please Enter Correct Value');
+    }
+    else {
+        if (CheckExpAmount.value == ' ' || CheckExpName.value == ' ') {
+            alert("Enter Value");
         }
-        else{
-            if(CheckExpAmount.value == ' ' && CheckExpName.value == ' '){
-                alert("Enter Value");
-            }
-            else{
-                prevExpense += expense;
-                TotalEXP.innerHTML = parseInt( prevExpense);
-                BalanceAmount.innerHTML = TBudget - prevExpense;
-                component(CheckExpName, CheckExpAmount);
-                CheckExpAmount.value = ' ';
-                CheckExpName.value = ' ';
-            }
+        else {
+            prevExpense += expense;
+            TotalEXP.innerHTML = parseInt(prevExpense);
+            BalanceAmount.innerHTML = TBudget - prevExpense;
+            component(CheckExpName, CheckExpAmount);
+            CheckExpAmount.value = ' ';
+            CheckExpName.value = ' ';
         }
-    });
+    }
+});
 
 function component(CheckExpName, CheckExpAmount) {
     const listElem = document.createElement('li');
@@ -76,7 +76,7 @@ function component(CheckExpName, CheckExpAmount) {
     const deleteIcon = document.querySelectorAll('.delete');
     const editIcon = document.querySelectorAll('.editIcon');
 
-    deleteIcon.forEach((item)=>{
+    deleteIcon.forEach((item) => {
         item.addEventListener('click', (e) => {
             e.stopImmediatePropagation();
             const listItem = item.closest('li');
@@ -84,7 +84,7 @@ function component(CheckExpName, CheckExpAmount) {
             e.target.parentNode.parentNode.remove();
         });
     });
-    editIcon.forEach((item)=>{
+    editIcon.forEach((item) => {
         item.addEventListener('click', (e) => {
             e.stopImmediatePropagation();
             const listItem = item.closest('li');
@@ -95,23 +95,23 @@ function component(CheckExpName, CheckExpAmount) {
 }
 
 function deleteItem(listItem) {
-        const expAmount = listItem.querySelector('.expenseAmount').innerText;
-        const currentBalance = document.querySelector('#totalblance').innerText;
+    const expAmount = listItem.querySelector('.expenseAmount').innerText;
+    const currentBalance = document.querySelector('#totalblance').innerText;
 
-        prevExpense -= parseInt(expAmount);
+    prevExpense -= parseInt(expAmount);
 
-        TotalEXP.innerHTML = Math.abs(prevExpense);
-        BalanceAmount.innerHTML = parseInt(currentBalance) + parseInt(expAmount);
+    TotalEXP.innerHTML = Math.abs(prevExpense);
+    BalanceAmount.innerHTML = parseInt(currentBalance) + parseInt(expAmount);
 }
 
-function editItem(listItem){
+function editItem(listItem) {
     const listName = listItem.querySelector('.expenseName');
     const listAmount = listItem.querySelector('.expenseAmount');
     const currentBalance = document.querySelector('#totalblance').innerText;
 
     prevExpense -= parseInt(listAmount.innerText);
     TotalEXP.innerHTML = Math.abs(prevExpense);
-     BalanceAmount.innerHTML = parseInt(currentBalance) + parseInt(listAmount.innerText);
+    BalanceAmount.innerHTML = parseInt(currentBalance) + parseInt(listAmount.innerText);
 
     CheckExpName.value = listName.innerText;
     CheckExpAmount.value = listAmount.innerText;
