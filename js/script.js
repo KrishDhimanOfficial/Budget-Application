@@ -51,15 +51,15 @@ function component(CheckExpName, CheckExpAmount) {
     const editIMG = document.createElement('img');
     const trashIMG = document.createElement('img');
 
-    editIMG.src = 'edit.svg';
-    trashIMG.src = 'delete.svg';
+    editIMG.src = '/images/edit.svg';
+    trashIMG.src = '/images/delete.svg';
     editIMG.className = 'editIcon';
     trashIMG.className = 'delete';
 
 
-    spanEXPName.classList.add('expenseName');
+    spanEXPName.classList.add('expenseName')
     spanEXPName.innerText = CheckExpName.value;
-    spanEXPAmount.classList.add('expenseAmount');
+    spanEXPAmount.classList.add('expenseAmount')
     spanEXPAmount.innerText = CheckExpAmount.value;
 
     edit.classList.add('edit');

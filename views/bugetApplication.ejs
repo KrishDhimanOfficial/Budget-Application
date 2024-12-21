@@ -1,44 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Budget Application</title>
     <style>
-        *{
+        * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
             font-family: Arial, Helvetica, sans-serif;
         }
-        body{
+
+        body {
             background: #f7f9fd;
         }
-        ul{
+
+        ul {
             margin-top: 30px;
             list-style: none;
-            & li{
+
+            & li {
                 display: flex;
                 justify-content: space-between;
             }
         }
-        input,button{
+
+        input,
+        button {
             border: 0;
             outline: 0;
             background: none;
         }
-        .container-wrapper{
+
+        .container-wrapper {
             width: 50%;
             margin: 100px auto 0;
         }
-        .section{
+
+        .section {
             display: flex;
             gap: 20px;
             justify-content: space-between;
         }
-        .inner-content{
+
+        .inner-content {
             width: 50%;
-            padding:10px 20px;
+            padding: 10px 20px;
             border-radius: 5px;
             box-shadow: 0 4px 4px lightgray;
             display: flex;
@@ -46,61 +55,72 @@
             flex-direction: column;
             background: #fff;
             gap: 20px;
-            & h2{
+
+            & h2 {
                 color: #000;
                 font-size: 1.2rem;
             }
-            & input{
+
+            & input {
                 padding: 8px;
                 border-radius: 5px;
                 border: 1px solid #e3e3e3;
             }
-            & button{
-            cursor: pointer;
+
+            & button {
+                cursor: pointer;
                 padding: 10px;
                 border-radius: 8px;
                 color: #fff;
                 background: #587ef4;
             }
         }
-        .bg{
+
+        .bg {
             color: #fff;
             margin-top: 40px;
             padding: 20px;
             border-radius: 8px;
-            background: #587ef4 ;
+            background: #587ef4;
         }
-        .counter{
+
+        .counter {
             display: flex;
             flex-direction: column;
             gap: 10px;
-            & span{
+
+            & span {
                 font-size: 1.2rem;
             }
         }
-        .ExpenseLIst{
+
+        .ExpenseLIst {
             margin-top: 20px;
             color: #000;
             padding: 20px;
             background: #fff;
         }
-        .edit{
+
+        .edit {
             display: flex;
             gap: 10px;
             color: #587ef4;
-            & img{
+
+            & img {
                 cursor: pointer;
                 width: 25px;
                 height: 25px;
             }
         }
-        .List-Container{
+
+        .List-Container {
             display: flex;
             flex-direction: column;
             gap: 10px;
         }
     </style>
 </head>
+
 <body>
     <div class="container-wrapper">
         <div class="section">
@@ -137,6 +157,7 @@
 
         </div>
     </div>
-    <script src="script.js"></script>
+    <script defer src="/js/script.js"></script>
 </body>
+
 </html>
