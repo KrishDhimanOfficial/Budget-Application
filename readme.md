@@ -11,7 +11,6 @@ Analyze Finances: Provide visual insights through charts and graphs to understan
 Save Goals: Set financial goals and track progress toward achieving them.
 
 Notifications: Alert users when they exceed budget limits or need to pay upcoming bills.
-
 ![alt text](<Screenshot 2025-01-06 at 12.59.50 PM.png>)
 
 The goal of a budget app is to promote financial discipline, minimize overspending, and assist in achieving short- and long-term financial objectives.
